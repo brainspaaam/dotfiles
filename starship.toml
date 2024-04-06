@@ -1,0 +1,49 @@
+# Disable the blank line at the start of the prompt
+add_newline = true
+
+# Changes the > symbol on the prompt
+[character]
+success_symbol = '[➜](bold green)'
+
+# Adds Regions and Profile for AWS
+[aws]
+format = 'on [$symbol($profile )(\($region\) )]($style)'
+style = 'bold blue'
+symbol = '🅰 '
+[aws.region_aliases]
+ap-southeast-2 = 'au'
+us-east-1 = 'va'
+[aws.profile_aliases]
+CompanyGroupFrobozzOnCallAccess = 'Frobozz'
+
+# Adds the duration time of the latest command
+[cmd_duration]
+min_time = 500
+format = 'took [$duration](bold yellow)'
+
+# Shows a symbol if you are within a container
+[container]
+format = '[$symbol \[$name\]]($style) '
+
+# Shows current working path
+[directory]
+truncation_length = 8
+truncation_symbol = '…/'
+
+# Shows current Git branch
+[git_branch]
+symbol = '🌱 '
+truncation_length = 4
+truncation_symbol = ''
+
+# Shows Kubernetes cluster information
+[kubernetes]
+format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
+disabled = false
+contexts = [
+  { context_pattern = "dev.local.cluster.k8s", style = "green", symbol = "💔 " },
+]
+
+# I actually have no idea about this one yet.
+[package]
+format = 'via [🎁 $version](208 bold) '
