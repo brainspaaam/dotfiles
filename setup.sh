@@ -1,15 +1,15 @@
 #!/bin/bash
-echo 'Creating symlinks.........'
-echo 'Symlink .bash_profile'
+echo 'Setting up all configuration files............' && sleep 3
+echo 'Setting up Bash Profile' && sleep 1
 ln -sf /home/$USER/dotfiles/.bash_profile /home/$USER/
-echo 'Symlink .bashrc'
+echo 'Setting up Bashrc' && sleep 1
 ln -sf /home/$USER/dotfiles/.bashrc /home/$USER/
-echo 'Symlink .tmux.conf'
+echo 'Setting up TMUX' && sleep 1
 ln -sf /home/$USER/dotfiles/.tmux.conf /home/$USER/
-echo 'Symlink .xinitrc'
+echo 'Setting up Xinitrc' && sleep 1
 ln -sf /home/$USER/dotfiles/.xinitrc /home/$USER/
-echo 'Symlink alacritty'
-mkdir -p /home/$USER/.config/alacritty/
-ln -sf /home/$USER/dotfiles/alacritty.toml /home/$USER/.config/alacritty/
-
+echo 'Setting up Alacritty' && sleep 1
+ln -sf /home/$USER/dotfiles/alacritty/ /home/$USER/.config/
+echo 'Setting up Picom' && sleep 1
+ln -sf /home/$USER/dotfiles/picom/ /home/$USER/.config/
 echo 'Done!'
